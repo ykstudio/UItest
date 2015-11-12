@@ -1,0 +1,63 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/drag-and-drop.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>   
+    <link href="css/jquery.contextMenu.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+      <div ng-app="example">
+        <div ng-controller="ExampleController">
+          <drag-and-drop
+            on-item-placed="logThis('item assigned', draggable, droppable)"
+            on-item-removed="logThis('item removed', draggable, droppable)"
+            on-drag-start="logThis('started dragging', draggable)"
+            on-drag-end="logThis('done dragging', draggable, droppable)"
+            on-drag-enter="logThis('dragged over drop spot', draggable, droppable)"
+            on-drag-leave="logThis('dragged out of drop spot', draggable, droppable)"
+            enable-swap="true">
+            <div id ="elementPanel">
+                <drag-item class="drag-item" drag-id="item-one">
+                    <div id="MenuItem_SearchUI" title="Search Field" class="context-menu1"></div>
+                </drag-item>
+
+                <drag-item class="drag-item" drag-id="item-two">
+                    <div id="MenuItem_Pagination"  title="Pagination" class="context-menu2"></div>
+                </drag-item>
+
+                <drag-item class="drag-item" drag-id="item-four">
+                    <div id="MenuItem_Dropdown"  title="Dropdown"  class="context-menu4"></div>
+                </drag-item>
+                
+                <drag-item class="drag-item" drag-id="item-three">
+                    <div id="MenuItem_Thumbnail"  title="Thumbnail"  class="context-menu3"></div>
+                </drag-item>
+            </div> 
+              
+            <drop-spot max-items="30" class="drop-spot" drop-id="drop-one">
+              <p>Drop Here</p>
+            </drop-spot>
+            
+          </drag-and-drop>
+        </div>
+      </div>
+
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"></script>
+      <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <script src="js/bootstrap.min.js" type="text/javascript"></script>
+      <script src="js/jquery.contextMenu.js" type="text/javascript"></script>
+      <script src="js/jquery.ui.position.min.js" type="text/javascript"></script>
+      <script type="text/javascript" src="js/angular-drag-and-drop.js"></script>
+      <script src="js/context-menu.js" type="text/javascript"></script>
+      <script type="text/javascript" src="js/sample-app.js"></script>
+    </body>
+</html>

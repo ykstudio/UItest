@@ -1,0 +1,192 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 8, 2015, 5:50:15 PM
+    Author     : Yuval
+*/
+html,body { margin:0;padding:0;width:100%;height:100%;font-family: Roboto, sans-serif;background-color: #eee;}
+p { margin: 0; }
+
+.drag-container {
+    background:#eee;
+
+}
+
+.drag-item {
+    margin: -20px 0px 0px 20px;
+}
+
+.drag-content {
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.dropped .drag-content {
+}
+
+.drag-active .drag-content {
+    transform: scale(1.15) rotate(3deg);
+    background-color:#ffc;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.35);
+}
+
+.drop-spot {
+    width: calc(100% - 186px);
+    height: calc(100% - 40px);
+    position: fixed;
+    margin:auto;
+    z-index:1;
+    top:0;
+    left:140px;
+    right:0;
+    bottom:0;
+}
+
+.drop-content {
+    border: 2px dashed rgba(0,0,0,0.15);
+    background:#fff;
+    position:absolute;
+    width:100%;
+    height:100%;
+    margin:auto;
+    border-radius: 10px;
+
+}
+.dragging .drop-content {
+    border: 2px dashed #999;
+}
+
+.drop-hovering .drop-content {
+    border-color:#0c3;
+    background: #dfd;
+}
+
+.drop-full {
+    background: #fee;
+}
+
+.drop-hovering .drop-full {
+    border-color:#f30;
+    background:#fdd;
+}
+
+.drop-one p {
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    height:24px;
+    margin:auto;
+    text-transform: uppercase;
+    color:#ccc;
+    text-align:center;
+}
+
+.add-shadow {
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.opacity{
+    opacity: 0.5;
+}
+
+.tint {
+    position: relative;
+    float: left;
+    cursor: pointer;
+}
+
+.tint:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(200,0,0, 0.5);
+    -moz-transition: background .3s linear;
+    -webkit-transition: background .3s linear;
+    -o-transition: background .3s linear;
+    transition: background .3s linear;
+}
+
+.selected{
+    border: dotted 2px #3AE05E;
+    background: #f8f8f8;
+}
+
+#elementPanel{
+    width: 182px;
+    z-index: 10;
+    position: relative;
+    margin-top: 43px;
+}
+
+#MenuItem_Pagination{
+    background: url("../img/ui/pagination.png");
+    width: 290px;
+    height: 41px;
+}
+
+#MenuItem_SearchUI{
+    width: 224px;
+    height: 50px;
+    background: url("../img/ui/searchi.png");
+    background-position: -5px;
+}
+
+#MenuItem_Thumbnail {
+    width: 178px;
+    height: 119px;
+    background: url("../img/ui/thumb.png");
+}
+
+#MenuItem_Dropdown {
+    width: 226px;
+    height: 57px;
+    background: url("../img/ui/dropdown.png");
+}
+
+input {
+    position: absolute;
+    z-index: 12;
+    left: -12px;
+    top: 10px;
+}
+
+.drag-transform .drag-content #MenuItem_SearchUI{
+    transform: scale(0.56);
+    transform-origin: 0 0;
+}
+
+.drag-transform .drag-content #MenuItem_Dropdown{
+    transform: scale(0.54);
+    transform-origin: 0 0;
+}
+
+.drag-transform .drag-content #MenuItem_Pagination{
+    transform: scale(0.42);
+    transform-origin: 0 0;
+    margin-top: 6px;
+}
+
+.drag-transform .drag-content #MenuItem_Thumbnail{ 
+    transform: scale(0.7);
+    transform-origin: 0 0; 
+}
+
+.dropped .drag-content div, .drag-active .drag-content div {
+    transform: scale(1) !important;
+    transform-origin: 0 0 !important;
+}
+
+.dropped .drag-content div.size-small{
+    transform: scale(0.8) !important;
+    transform-origin: 0 0 !important;
+}
+
